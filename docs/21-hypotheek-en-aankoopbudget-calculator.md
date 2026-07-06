@@ -10,10 +10,10 @@ Deze repo bevat een kleine lokale calculator voor gestandaardiseerde aankoopbudg
 python3 scripts/mortgage_budget.py --input examples/doorstromer-aankoopbudget-input.json
 ```
 
-Scenario met doelwoning, energielabel/risicoklasse en twee hypotheekroutes:
+Of copy-pastebaar tekstblok:
 
 ```bash
-python3 scripts/mortgage_budget.py --input examples/doorstromer-scenarios-targetwoning-input.json
+python3 scripts/mortgage_budget.py --format text --input examples/doorstromer-scenarios-targetwoning-input.json
 ```
 
 Of inline:

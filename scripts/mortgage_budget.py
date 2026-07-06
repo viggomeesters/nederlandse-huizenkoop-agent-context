@@ -24,6 +24,10 @@ def round_euro(value: float) -> int:
     return int(round(value))
 
 
+def format_euro(value: Any) -> str:
+    return "€" + f"{round_euro(money(value)):,}".replace(",", ".")
+
+
 def sum_bucket(bucket: Any) -> float:
     if not bucket:
         return 0.0
@@ -203,12 +207,70 @@ def load_payload(args: argparse.Namespace) -> dict[str, Any]:
     raise SystemExit("Use --json '{...}' or --input path.json")
 
 
+def format_text_output(result: dict[str, Any]) -> str:
+    hypotheek = result["hypotheek"]
+    overwaarde = result["overwaarde"]
+    kosten = result["kosten"]
+    budget = result["budget"]
+    target = result.get("target_woning") or {}
+
+    max_after_costs = (
+        budget["indicatieve_maximale_aankoopprijs"]
+        + kosten.get("gewenste_buffer_na_aankoop", 0)
+    )
+    practical = budget["indicatieve_maximale_aankoopprijs"] - kosten.get("kosten_koper", 0)
+    practical_floor = max(0, round_euro(practical / 5000) * 5000)
+    practical_ceiling = max(practical_floor, practical_floor + 5000)
+
+    scenario = hypotheek.get("scenario_key")
+    scenario_line = f"Scenario: {scenario}\n" if scenario else ""
+    target_line = ""
+    if target:
+        bits = []
+        if target.get("aankoopprijs"):
+            bits.append(f"doelwoning {format_euro(target['aankoopprijs'])}")
+        if target.get("energielabel"):
+            bits.append(f"label {target['energielabel']}")
+        if target.get("loan_to_value_pct") is not None:
+            bits.append(f"LTV {target['loan_to_value_pct']:.1f}% ({target.get('risicoklasse_indicatief')})")
+        target_line = "Target: " + ", ".join(bits) + "\n" if bits else ""
+
+    return f"""AANKOOPBUDGET — INDICATIEF
+{scenario_line}{target_line}
+Input:
+- Hypotheekruimte: {format_euro(hypotheek['maximale_hypotheek_indicatief'])}
+- Bruto overwaarde: {format_euro(overwaarde['bruto_overwaarde'])}
+- Verkoopkosten: {format_euro(overwaarde['verkoopkosten_in_mindering_op_overbrugging'])}
+- Kosten koper/aankoopkosten: {format_euro(kosten['kosten_koper'])}
+- Buffer/marge: {format_euro(kosten['gewenste_buffer_na_aankoop'])}
+
+Overbrugging:
+Indicatieve overbrugging = {format_euro(overwaarde['indicatieve_overbrugging'])}
+Niet direct vrijgegeven marge = {format_euro(overwaarde['niet_direct_vrijgegeven_marge'])}
+Verkoopkosten gaan standaard van de overbrugging af.
+
+Budget:
+Beschikbaar aankoop + kosten = {format_euro(budget['beschikbaar_voor_aankoop_en_kosten'])}
+MAX woning na aankoopkosten: {format_euro(max_after_costs)}
+Veiliger plafond met buffer: {format_euro(budget['indicatieve_maximale_aankoopprijs'])}
+Zoekrange: rond {format_euro(practical_floor)}–{format_euro(practical_ceiling)}
+
+Kort:
+Max is {format_euro(max_after_costs)} als alles wordt geaccepteerd. Praktisch zoeken rond {format_euro(practical_floor)}–{format_euro(practical_ceiling)} houdt ruimte voor kosten koper, verkoopkosten, bankvoorwaarden en tegenvallers.
+""".strip()
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Indicatieve aankoopbudget- en hypotheekcalculator")
     parser.add_argument("--json", help="JSON input as string")
     parser.add_argument("--input", help="Path to JSON input file")
+    parser.add_argument("--format", choices=["json", "text"], default="json", help="Output format")
     args = parser.parse_args()
-    print(json.dumps(calculate(load_payload(args)), ensure_ascii=False, indent=2))
+    result = calculate(load_payload(args))
+    if args.format == "text":
+        print(format_text_output(result))
+    else:
+        print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":

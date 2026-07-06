@@ -89,6 +89,21 @@ class MortgageBudgetCalculatorTest(unittest.TestCase):
         self.assertEqual(result["target_woning"]["risicoklasse_indicatief"], "<=90%")
         self.assertEqual(result["target_woning"]["extra_leenruimte_op_basis_target"], 10000)
 
+    def test_text_output_is_compact_copy_pasteable(self):
+        proc = subprocess.run(
+            [sys.executable, str(SCRIPT), "--format", "text", "--input", "examples/doorstromer-scenarios-targetwoning-input.json"],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+        )
+
+        self.assertEqual(proc.returncode, 0, proc.stderr)
+        self.assertIn("AANKOOPBUDGET — INDICATIEF", proc.stdout)
+        self.assertIn("MAX woning na aankoopkosten: €627.500", proc.stdout)
+        self.assertIn("Zoekrange: rond €595.000–€600.000", proc.stdout)
+        self.assertIn("Verkoopkosten gaan standaard van de overbrugging af", proc.stdout)
+        self.assertLess(len(proc.stdout), 1400)
+
 
 if __name__ == "__main__":
     unittest.main()
