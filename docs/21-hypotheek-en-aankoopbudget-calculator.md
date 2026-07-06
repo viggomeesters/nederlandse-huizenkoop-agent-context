@@ -24,7 +24,7 @@ python3 scripts/mortgage_budget.py --json '{"maximale_hypotheek_bankindicatie":5
 
 ## Hypotheekbedrag berekenen
 
-Als `maximale_hypotheek_bankindicatie` bekend is, gebruikt de calculator dat bedrag. Als die niet bekend is, kan de tool een indicatie berekenen uit:
+Als `maximale_hypotheek_bankindicatie` bekend is, gebruikt de calculator dat bedrag als leidend. `hypotheek_input` is dan alleen achtergrond en overschrijft de bankindicatie niet. Als er geen bankindicatie is, kan de tool een indicatie berekenen uit:
 
 ```json
 {

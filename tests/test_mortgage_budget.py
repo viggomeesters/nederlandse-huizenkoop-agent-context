@@ -57,6 +57,22 @@ class MortgageBudgetCalculatorTest(unittest.TestCase):
         self.assertGreaterEqual(result["hypotheek"]["maximale_hypotheek_indicatief"], 471000)
         self.assertLessEqual(result["hypotheek"]["maximale_hypotheek_indicatief"], 472000)
 
+    def test_explicit_bank_indication_wins_over_income_estimate(self):
+        result = self.run_calc(
+            {
+                "maximale_hypotheek_bankindicatie": 540000,
+                "hypotheek_input": {
+                    "bruto_jaarinkomen": 90000,
+                    "financieringslastpercentage": 0.30,
+                    "hypotheekrente": 0.04,
+                    "looptijd_jaren": 30,
+                },
+            }
+        )
+
+        self.assertEqual(result["hypotheek"]["bron"], "bankindicatie_input")
+        self.assertEqual(result["hypotheek"]["maximale_hypotheek_indicatief"], 540000)
+
     def test_scenario_inputs_and_target_house_ltv_are_reported(self):
         result = self.run_calc(
             {

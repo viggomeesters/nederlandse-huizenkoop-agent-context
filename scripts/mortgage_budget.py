@@ -54,10 +54,22 @@ def calculate_hypotheek(payload: dict[str, Any]) -> dict[str, Any]:
     h = payload.get("hypotheek_input") or {}
     explicit = payload.get("maximale_hypotheek_bankindicatie")
 
+    if explicit is not None:
+        return {
+            "bron": "bankindicatie_input",
+            "maximale_hypotheek_indicatief": round_euro(money(explicit)),
+            "maximale_bruto_maandlast": None,
+            "gebruikte_financieringslastpercentage": None,
+            "gebruikte_hypotheekrente": None,
+            "looptijd_jaren": None,
+            "scenario_key": payload.get("key"),
+            "toelichting": payload.get("toelichting"),
+        }
+
     if not h:
         return {
-            "bron": "bankindicatie_input" if explicit is not None else "niet_opgegeven",
-            "maximale_hypotheek_indicatief": round_euro(money(explicit)) if explicit is not None else 0,
+            "bron": "niet_opgegeven",
+            "maximale_hypotheek_indicatief": 0,
             "maximale_bruto_maandlast": None,
             "gebruikte_financieringslastpercentage": None,
             "gebruikte_hypotheekrente": None,
