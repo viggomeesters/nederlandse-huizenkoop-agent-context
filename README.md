@@ -1,5 +1,7 @@
 # Nederlandse Huizenkoop Agent Context
 
+![Nederlandse Huizenkoop Agent Context repo hero](assets/hero.svg)
+
 Open contextpakket voor AI-agenten die Nederlandse huizenkopers helpen met **bezichtigen, bieden, ontbindende voorwaarden, financiering, verkoop van de eigen woning, kosten koper en onderhandelen met makelaars**.
 
 Dit project is Markdown-first: bedoeld om direct te lezen op GitHub én te kopiëren naar Claude, ChatGPT, Codex, Hermes of een andere agent.
