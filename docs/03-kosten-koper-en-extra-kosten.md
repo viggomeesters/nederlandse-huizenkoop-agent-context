@@ -41,6 +41,8 @@ Een woning kan op papier haalbaar zijn maar praktisch krap als al het spaargeld 
 beschikbaar_cash + vrij_te_maken_overwaarde - kosten_koper - extra_kosten - gewenste_buffer = vrije ruimte / tekort
 ```
 
+Voor doorstromers met een huidige woning: gebruik het gestandaardiseerde variabelenmodel in [`20-aankoopbudget-variabelen-outputmodel.md`](20-aankoopbudget-variabelen-outputmodel.md). Daarin staat expliciet dat kosten koper, notaris, hypotheekadvies en veel extra kosten meestal uit overwaarde of eigen middelen komen, niet automatisch uit extra hypotheek.
+
 ## Niet meefinancieren zonder check
 
 Verbouwingskosten, inrichting en verhuisuitgaven zijn meestal geen gewone hypotheekruimte. Energiebesparende maatregelen kunnen uitzonderingen hebben, maar moeten met hypotheekadviseur/bank worden bevestigd.

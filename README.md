@@ -64,6 +64,7 @@ Of start met één concrete taak:
 18. [Risico's en rode vlaggen](docs/17-risicos-rode-vlaggen.md)
 19. [Agent playbooks](docs/18-agent-playbooks.md)
 20. [Bronnen en verificatie](docs/19-bronnen-en-verificatie.md)
+21. [Aankoopbudget variabelen en outputmodel](docs/20-aankoopbudget-variabelen-outputmodel.md)
 
 ## Belangrijke waarschuwing
 

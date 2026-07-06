@@ -9,6 +9,7 @@ Controleer minimaal:
 - kosten koper en extra kosten;
 - maximale hypotheek, taxatierisico en eigen middelen;
 - verkoop eigen woning / overbrugging;
+- gestandaardiseerd aankoopbudget: hypotheekindicatie + overbrugging + eigen middelen - kosten koper - extra kosten - buffer;
 - financieringsvoorbehoud;
 - bouwkundige keuring;
 - opleverdatum en roerende zaken;
