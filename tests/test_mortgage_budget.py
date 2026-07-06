@@ -57,6 +57,38 @@ class MortgageBudgetCalculatorTest(unittest.TestCase):
         self.assertGreaterEqual(result["hypotheek"]["maximale_hypotheek_indicatief"], 471000)
         self.assertLessEqual(result["hypotheek"]["maximale_hypotheek_indicatief"], 472000)
 
+    def test_scenario_inputs_and_target_house_ltv_are_reported(self):
+        result = self.run_calc(
+            {
+                "hypotheek_scenario_key": "openbreken",
+                "hypotheek_scenarios": [
+                    {"key": "niet_openbreken", "maximale_hypotheek_bankindicatie": 500000},
+                    {"key": "openbreken", "maximale_hypotheek_bankindicatie": 540000},
+                ],
+                "target_woning": {
+                    "aankoopprijs": 600000,
+                    "taxatiewaarde": 600000,
+                    "energielabel": "A",
+                    "extra_leenruimte_op_basis_target": 10000,
+                },
+                "huidige_woning": {
+                    "verwachte_verkoopprijs": 450000,
+                    "resterende_hypotheek": 315000,
+                    "verkoopkosten": 5000,
+                    "overbruggingspercentage": 0.95,
+                },
+                "kosten_koper": {"totaal": 20000},
+                "gewenste_buffer_na_aankoop": 12500,
+            }
+        )
+
+        self.assertEqual(result["hypotheek"]["scenario_key"], "openbreken")
+        self.assertEqual(result["hypotheek_scenarios"]["niet_openbreken"]["maximale_hypotheek_indicatief"], 500000)
+        self.assertEqual(result["target_woning"]["energielabel"], "A")
+        self.assertEqual(result["target_woning"]["loan_to_value_pct"], 90.0)
+        self.assertEqual(result["target_woning"]["risicoklasse_indicatief"], "<=90%")
+        self.assertEqual(result["target_woning"]["extra_leenruimte_op_basis_target"], 10000)
+
 
 if __name__ == "__main__":
     unittest.main()

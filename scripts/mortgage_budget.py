@@ -46,7 +46,7 @@ def annuity_principal_from_payment(monthly_payment: float, annual_interest: floa
     return monthly_payment * (1 - (1 + monthly_interest) ** (-months)) / monthly_interest
 
 
-def calculate_hypotheek(payload: dict[str, Any]) -> dict[str, int | float | None]:
+def calculate_hypotheek(payload: dict[str, Any]) -> dict[str, Any]:
     h = payload.get("hypotheek_input") or {}
     explicit = payload.get("maximale_hypotheek_bankindicatie")
 
@@ -58,6 +58,8 @@ def calculate_hypotheek(payload: dict[str, Any]) -> dict[str, int | float | None
             "gebruikte_financieringslastpercentage": None,
             "gebruikte_hypotheekrente": None,
             "looptijd_jaren": None,
+            "scenario_key": payload.get("key"),
+            "toelichting": payload.get("toelichting"),
         }
 
     gross_income = money(h.get("bruto_jaarinkomen")) + money(h.get("bruto_jaarinkomen_partner"))
@@ -81,11 +83,65 @@ def calculate_hypotheek(payload: dict[str, Any]) -> dict[str, int | float | None
         "gebruikte_financieringslastpercentage": load_pct,
         "gebruikte_hypotheekrente": annual_interest,
         "looptijd_jaren": years,
+        "scenario_key": payload.get("key"),
+        "toelichting": payload.get("toelichting"),
+    }
+
+
+def choose_hypotheek(payload: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any]]:
+    scenarios = payload.get("hypotheek_scenarios") or []
+    if not scenarios:
+        return calculate_hypotheek(payload), {}
+
+    calculated: dict[str, Any] = {}
+    for index, scenario in enumerate(scenarios):
+        key = str(scenario.get("key") or f"scenario_{index + 1}")
+        scenario_payload = dict(payload)
+        scenario_payload.update(scenario)
+        scenario_payload["key"] = key
+        calculated[key] = calculate_hypotheek(scenario_payload)
+
+    selected_key = payload.get("hypotheek_scenario_key") or next(iter(calculated))
+    if selected_key not in calculated:
+        raise ValueError(f"unknown hypotheek_scenario_key: {selected_key}")
+    return calculated[selected_key], calculated
+
+
+def risk_class(ltv: float | None) -> str | None:
+    if ltv is None:
+        return None
+    if ltv <= 60:
+        return "<=60%"
+    if ltv <= 70:
+        return "<=70%"
+    if ltv <= 80:
+        return "<=80%"
+    if ltv <= 90:
+        return "<=90%"
+    if ltv <= 100:
+        return "<=100%"
+    return ">100%"
+
+
+def calculate_target_woning(payload: dict[str, Any], mortgage_amount: float) -> dict[str, Any] | None:
+    target = payload.get("target_woning") or {}
+    if not target:
+        return None
+    value = money(target.get("taxatiewaarde") or target.get("marktwaarde") or target.get("aankoopprijs"))
+    ltv = round(mortgage_amount / value * 100, 1) if value else None
+    return {
+        "aankoopprijs": round_euro(money(target.get("aankoopprijs"))) if target.get("aankoopprijs") is not None else None,
+        "taxatiewaarde": round_euro(money(target.get("taxatiewaarde"))) if target.get("taxatiewaarde") is not None else None,
+        "marktwaarde": round_euro(money(target.get("marktwaarde"))) if target.get("marktwaarde") is not None else None,
+        "energielabel": target.get("energielabel"),
+        "extra_leenruimte_op_basis_target": round_euro(money(target.get("extra_leenruimte_op_basis_target"))),
+        "loan_to_value_pct": ltv,
+        "risicoklasse_indicatief": risk_class(ltv),
     }
 
 
 def calculate(payload: dict[str, Any]) -> dict[str, Any]:
-    hypotheek = calculate_hypotheek(payload)
+    hypotheek, hypotheek_scenarios = choose_hypotheek(payload)
     max_mortgage = money(hypotheek["maximale_hypotheek_indicatief"])
 
     current_home = payload.get("huidige_woning") or {}
@@ -107,8 +163,9 @@ def calculate(payload: dict[str, Any]) -> dict[str, Any]:
     available = max_mortgage + bridge + own_funds
     max_purchase = available - buyer_costs - extra_costs - buffer_after
 
-    return {
+    result = {
         "hypotheek": hypotheek,
+        "hypotheek_scenarios": hypotheek_scenarios,
         "overwaarde": {
             "bruto_overwaarde": round_euro(gross_equity),
             "verkoopkosten_in_mindering_op_overbrugging": round_euro(sale_costs),
@@ -129,8 +186,13 @@ def calculate(payload: dict[str, Any]) -> dict[str, Any]:
             "Financieringslastpercentage moet uit actuele normen/adviseur komen; deze tool kiest het niet automatisch.",
             "Kosten koper en veel extra kosten komen meestal uit overwaarde/eigen middelen, niet automatisch uit extra hypotheek.",
             "Overbrugging hangt af van verkoopstatus, taxatie/verkoopprijs, bankvoorwaarden en verkoopkosten.",
+            "Doelwoning, energielabel en loan-to-value kunnen rente/risicoklasse en extra leenruimte beïnvloeden; voer die expliciet in.",
         ],
     }
+    target_woning = calculate_target_woning(payload, max_mortgage)
+    if target_woning:
+        result["target_woning"] = target_woning
+    return result
 
 
 def load_payload(args: argparse.Namespace) -> dict[str, Any]:

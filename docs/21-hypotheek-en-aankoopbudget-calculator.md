@@ -10,6 +10,12 @@ Deze repo bevat een kleine lokale calculator voor gestandaardiseerde aankoopbudg
 python3 scripts/mortgage_budget.py --input examples/doorstromer-aankoopbudget-input.json
 ```
 
+Scenario met doelwoning, energielabel/risicoklasse en twee hypotheekroutes:
+
+```bash
+python3 scripts/mortgage_budget.py --input examples/doorstromer-scenarios-targetwoning-input.json
+```
+
 Of inline:
 
 ```bash
@@ -92,12 +98,68 @@ Niet:
 De bank zal exact €... lenen.
 ```
 
+## Standaard plek voor rente-aannames
+
+Gebruik `data/rente-scenarios.example.json` als vaste plek voor rente-aannames. Dit is bewust geen automatische live scrape: hypotheekrentes hangen af van aanbieder, rentevaste periode, NHG, energielabel, loan-to-value/risicoklasse en productvoorwaarden.
+
+Werk het bestand handmatig bij met actuele bron of adviseur voordat je serieus rekent. Reken daarna minimaal met drie scenario's:
+
+```text
+laag  = optimistische actuele rente
+midden = normale werkhypothese
+hoog = voorzichtige stress-test
+```
+
+## Doelwoning, energielabel en risicoklasse
+
+Neem de doelwoning apart op als `target_woning`:
+
+```json
+{
+  "target_woning": {
+    "aankoopprijs": 600000,
+    "taxatiewaarde": 600000,
+    "energielabel": "A",
+    "extra_leenruimte_op_basis_target": 0
+  }
+}
+```
+
+Waarom dit nodig is:
+
+- energielabel of verduurzaming kan invloed hebben op extra leenruimte of rentevoorwaarden;
+- de verhouding hypotheek / woningwaarde bepaalt de indicatieve loan-to-value en risicoklasse;
+- overwaarde/eigen inbreng verlaagt die loan-to-value, wat bij veel aanbieders een lagere rente kan betekenen;
+- een aankoopprijs boven taxatiewaarde kan extra eigen geld vragen.
+
+De tool rapporteert daarom `loan_to_value_pct` en `risicoklasse_indicatief`, maar claimt niet automatisch welke bankkorting geldt.
+
+## Meerdere hypotheekroutes
+
+Gebruik `hypotheek_scenarios` voor routes zoals bestaande hypotheek meenemen, niet openbreken, wel openbreken of herfinancieren:
+
+```json
+{
+  "hypotheek_scenario_key": "openbreken",
+  "hypotheek_scenarios": [
+    {"key": "niet_openbreken", "maximale_hypotheek_bankindicatie": 500000},
+    {"key": "openbreken", "maximale_hypotheek_bankindicatie": 540000}
+  ]
+}
+```
+
+Zo blijft zichtbaar welke route de aankoopruimte bepaalt.
+
 ## Outputvelden
 
 De tool geeft JSON terug met:
 
 - `hypotheek.maximale_hypotheek_indicatief`
 - `hypotheek.maximale_bruto_maandlast`
+- `hypotheek_scenarios`
+- `target_woning.loan_to_value_pct`
+- `target_woning.risicoklasse_indicatief`
+- `target_woning.energielabel`
 - `overwaarde.bruto_overwaarde`
 - `overwaarde.verkoopkosten_in_mindering_op_overbrugging`
 - `overwaarde.indicatieve_overbrugging`

@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "status": "example_assumptions_not_live_rates",
+  "updated_at": "2026-07-06",
+  "source_urls": [
+    "https://www.hypotheekrente.nl/rente/10-jaar-rentevast/",
+    "https://www.hypotheekrente.nl/rente/10-jaar-rentevast/nhg/",
+    "https://www.hypotheker.nl/en/mortgage-interest-rates/"
+  ],
+  "notes": [
+    "Gebruik dit bestand als standaard plek voor rente-aannames, niet als automatisch live tarief.",
+    "Werk percentages handmatig bij op basis van actuele bron of adviseur voordat je een serieus budget doorrekent.",
+    "Zoeksnippets rond 2026-07-06 lieten 10 jaar vast laagste rentes rond 3,6% zien; calculators moeten altijd met scenario's rekenen."
+  ],
+  "scenarios": [
+    {
+      "key": "laag_10jaar",
+      "hypotheekrente": 0.036,
+      "label": "Lage 10 jaar vast scenario-aanname"
+    },
+    {
+      "key": "midden_10jaar",
+      "hypotheekrente": 0.04,
+      "label": "Midden scenario-aanname"
+    },
+    {
+      "key": "hoog_10jaar",
+      "hypotheekrente": 0.045,
+      "label": "Voorzichtige hogere rente-aanname"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "hypotheek_scenario_key": "openbreken",
+  "hypotheek_scenarios": [
+    {
+      "key": "niet_openbreken",
+      "maximale_hypotheek_bankindicatie": 500000,
+      "toelichting": "Voorbeeldscenario: bestaande hypotheek/rente niet openbreken"
+    },
+    {
+      "key": "openbreken",
+      "maximale_hypotheek_bankindicatie": 540000,
+      "toelichting": "Voorbeeldscenario: hypotheek openbreken/herfinancieren"
+    }
+  ],
+  "target_woning": {
+    "aankoopprijs": 600000,
+    "taxatiewaarde": 600000,
+    "energielabel": "A",
+    "extra_leenruimte_op_basis_target": 0
+  },
+  "huidige_woning": {
+    "verwachte_verkoopprijs": 450000,
+    "resterende_hypotheek": 315000,
+    "verkoopkosten": 5000,
+    "overbruggingspercentage": 0.95,
+    "verkoopstatus": "verkocht_onder_voorbehoud"
+  },
+  "kosten_koper": {
+    "totaal": 20000
+  },
+  "extra_kosten": {
+    "totaal": 0
+  },
+  "gewenste_buffer_na_aankoop": 12500
+}
