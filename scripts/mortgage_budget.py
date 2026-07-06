@@ -111,6 +111,7 @@ def calculate(payload: dict[str, Any]) -> dict[str, Any]:
         "hypotheek": hypotheek,
         "overwaarde": {
             "bruto_overwaarde": round_euro(gross_equity),
+            "verkoopkosten_in_mindering_op_overbrugging": round_euro(sale_costs),
             "indicatieve_overbrugging": round_euro(bridge),
             "niet_direct_vrijgegeven_marge": round_euro(unreleased_margin),
         },

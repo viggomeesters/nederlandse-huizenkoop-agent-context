@@ -1,6 +1,6 @@
 # Hypotheek- en aankoopbudgetcalculator
 
-Deze repo bevat een kleine lokale calculator voor gestandaardiseerde aankoopbudget-output. De tool is bedoeld voor agentgebruik: vaste inputvariabelen erin, dezelfde rekenstappen eruit.
+Deze repo bevat een kleine lokale calculator voor gestandaardiseerde aankoopbudget-output. De tool is bedoeld voor agentgebruik: vaste inputvariabelen erin, dezelfde rekenstappen eruit. Verkoopkosten worden standaard als aparte input meegenomen en van de overbrugging afgetrokken.
 
 > Let op: dit is geen hypotheekadvies en geen vervanging van bankacceptatie. De calculator rekent alleen met expliciete input. Het actuele financieringslastpercentage/woonquote moet uit actuele normen, adviseur of bank komen.
 
@@ -99,6 +99,7 @@ De tool geeft JSON terug met:
 - `hypotheek.maximale_hypotheek_indicatief`
 - `hypotheek.maximale_bruto_maandlast`
 - `overwaarde.bruto_overwaarde`
+- `overwaarde.verkoopkosten_in_mindering_op_overbrugging`
 - `overwaarde.indicatieve_overbrugging`
 - `overwaarde.niet_direct_vrijgegeven_marge`
 - `kosten.kosten_koper`

@@ -18,7 +18,7 @@ Een overbruggingshypotheek kan tijdelijk overwaarde beschikbaar maken voordat de
 Bij een bank-haircut zoals 90% of 95% gaat het meestal niet om `percentage × bruto overwaarde`, maar om:
 
 ```text
-maximale overbrugging = percentage × woningwaarde of verkoopprijs - resterende hypotheek - eventuele verkoopkosten
+maximale overbrugging = percentage × woningwaarde of verkoopprijs - resterende hypotheek - verkoopkosten
 ```
 
 Voorbeeld met afgeronde bedragen:
@@ -30,12 +30,13 @@ Bruto overwaarde:                €135.000
 
 95% van verkoopprijs:            €427.500
 Minus resterende hypotheek:      €315.000
-Indicatieve overbrugging:        €112.500
+Verkoopkosten voorbeeld:         €5.000
+Indicatieve overbrugging:        €107.500
 ```
 
 De totale bruto overwaarde is in dit voorbeeld nog steeds €135.000. Alleen geeft de geldverstrekker daarvan niet automatisch 95% vrij. Door eerst 95% van de woningwaarde of verkoopprijs te nemen en daarna de hypotheekschuld af te trekken, blijft er een veiligheidsmarge over voor verkooprisico, kosten en voorwaarden.
 
-Controleer per aanbieder en situatie of de basis de taxatiewaarde, verwachte verkoopprijs of getekende verkoopprijs is, en of verkoopkosten nog apart worden afgetrokken. Bij een al verkochte woning kan de toegestane overbrugging hoger zijn dan bij een woning die nog niet definitief verkocht is.
+Reken standaard met verkoopkosten in mindering op de overbrugging. Controleer per aanbieder en situatie of de basis de taxatiewaarde, verwachte verkoopprijs of getekende verkoopprijs is, en of de bank verkoopkosten anders behandelt. Bij een al verkochte woning kan de toegestane overbrugging hoger zijn dan bij een woning die nog niet definitief verkocht is.
 
 ## Voorbehoud verkoop eigen woning
 

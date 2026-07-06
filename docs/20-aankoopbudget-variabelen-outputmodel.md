@@ -24,7 +24,7 @@ aankoopbudget_input:
   huidige_woning:
     verwachte_verkoopprijs: 0
     resterende_hypotheek: 0
-    verkoopkosten: 0
+    verkoopkosten: 0 # standaard meenemen en van overbrugging aftrekken
     overbruggingspercentage: 0.95
     verkoopstatus: onbekend # niet_verkocht | verkocht_onder_voorbehoud | definitief_verkocht
 
@@ -111,6 +111,7 @@ Input:
 
 Overwaarde / overbrugging:
 - Bruto overwaarde: €...
+- Verkoopkosten in mindering op overbrugging: €...
 - Indicatieve overbrugging: €...
 - Niet direct vrijgegeven marge / onzekerheid: €...
 
@@ -140,7 +141,7 @@ aankoopbudget_input:
   huidige_woning:
     verwachte_verkoopprijs: 450000
     resterende_hypotheek: 315000
-    verkoopkosten: 0
+    verkoopkosten: 5000
     overbruggingspercentage: 0.95
   eigen_middelen:
     spaargeld_in_te_zetten: 0
@@ -156,21 +157,21 @@ Berekening:
 
 ```text
 bruto_overwaarde = €450.000 - €315.000 = €135.000
-indicatieve_overbrugging = €450.000 × 95% - €315.000 = €112.500
-beschikbaar_voor_aankoop_en_kosten = €540.000 + €112.500 = €652.500
-maximale_aankoopprijs_indicatief = €652.500 - €20.000 = €632.500
+indicatieve_overbrugging = €450.000 × 95% - €315.000 - €5.000 verkoopkosten = €107.500
+beschikbaar_voor_aankoop_en_kosten = €540.000 + €107.500 = €647.500
+maximale_aankoopprijs_indicatief = €647.500 - €20.000 = €627.500
 ```
 
 Als een koper daarnaast bewust €12.500 marge, extra kosten of buffer wil houden, wordt de praktische biedruimte ongeveer:
 
 ```text
-€632.500 - €12.500 = €620.000
+€627.500 - €12.500 = €615.000
 ```
 
 En als de totale overdracht, notaris, hypotheekadvies en andere aankoopkosten rond €20.000 liggen, geldt de nuchtere samenvatting:
 
 ```text
-Indicatief totaalbudget rond €620.000 betekent: ongeveer €600.000 uitgeven aan de woning, en circa €20.000 apart houden voor kosten koper / aankoopkosten.
+Indicatief totaalbudget rond €615.000 betekent: ongeveer €595.000 à €600.000 uitgeven aan de woning, en circa €20.000 apart houden voor kosten koper / aankoopkosten.
 ```
 
 ## Agent-waarschuwingen

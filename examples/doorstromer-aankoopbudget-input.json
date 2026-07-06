@@ -3,7 +3,7 @@
   "huidige_woning": {
     "verwachte_verkoopprijs": 450000,
     "resterende_hypotheek": 315000,
-    "verkoopkosten": 0,
+    "verkoopkosten": 5000,
     "overbruggingspercentage": 0.95,
     "verkoopstatus": "verkocht_onder_voorbehoud"
   },

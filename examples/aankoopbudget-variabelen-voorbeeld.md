@@ -10,7 +10,7 @@ aankoopbudget_input:
   huidige_woning:
     verwachte_verkoopprijs: 450000
     resterende_hypotheek: 315000
-    verkoopkosten: 0
+    verkoopkosten: 5000
     overbruggingspercentage: 0.95
     verkoopstatus: verkocht_onder_voorbehoud
 
@@ -55,8 +55,9 @@ Input:
 
 Overwaarde / overbrugging:
 - Bruto overwaarde: €135.000
-- Indicatieve overbrugging: €112.500
-- Niet direct vrijgegeven marge / onzekerheid: €22.500 vóór eventuele verkoopkosten
+- Verkoopkosten in mindering op overbrugging: €5.000
+- Indicatieve overbrugging: €107.500
+- Niet direct vrijgegeven marge / onzekerheid: €27.500 inclusief €5.000 verkoopkosten
 
 Kosten buiten aankoopprijs:
 - Kosten koper: circa €20.000
@@ -64,9 +65,9 @@ Kosten buiten aankoopprijs:
 - Gewenste buffer na aankoop: €12.500
 
 Uitkomst:
-- Beschikbaar voor aankoop + kosten: €652.500
-- Indicatieve maximale aankoopprijs: €620.000
-- Praktisch veilig biedplafond: circa €600.000 als je circa €20.000 apart houdt voor overdracht, notaris, hypotheekadvies en andere aankoopkosten
+- Beschikbaar voor aankoop + kosten: €647.500
+- Indicatieve maximale aankoopprijs: €615.000
+- Praktisch veilig biedplafond: circa €595.000–€600.000 als je circa €20.000 apart houdt voor overdracht, notaris, hypotheekadvies en andere aankoopkosten
 
 Let op:
 - Kosten koper en veel extra kosten komen uit overwaarde/eigen middelen, niet automatisch uit extra hypotheek.

@@ -26,6 +26,7 @@ class MortgageBudgetCalculatorTest(unittest.TestCase):
                 "huidige_woning": {
                     "verwachte_verkoopprijs": 450000,
                     "resterende_hypotheek": 315000,
+                    "verkoopkosten": 5000,
                     "overbruggingspercentage": 0.95,
                 },
                 "kosten_koper": {"totaal": 20000},
@@ -35,9 +36,10 @@ class MortgageBudgetCalculatorTest(unittest.TestCase):
         )
 
         self.assertEqual(result["overwaarde"]["bruto_overwaarde"], 135000)
-        self.assertEqual(result["overwaarde"]["indicatieve_overbrugging"], 112500)
-        self.assertEqual(result["budget"]["beschikbaar_voor_aankoop_en_kosten"], 652500)
-        self.assertEqual(result["budget"]["indicatieve_maximale_aankoopprijs"], 620000)
+        self.assertEqual(result["overwaarde"]["verkoopkosten_in_mindering_op_overbrugging"], 5000)
+        self.assertEqual(result["overwaarde"]["indicatieve_overbrugging"], 107500)
+        self.assertEqual(result["budget"]["beschikbaar_voor_aankoop_en_kosten"], 647500)
+        self.assertEqual(result["budget"]["indicatieve_maximale_aankoopprijs"], 615000)
 
     def test_hypotheek_indicatie_from_income_monthly_capacity_annuity(self):
         result = self.run_calc(
