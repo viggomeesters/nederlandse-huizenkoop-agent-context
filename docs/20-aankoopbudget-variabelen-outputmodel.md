@@ -14,7 +14,7 @@ Het doel van dit model is niet om hypotheekadvies te vervangen. Het doel is om e
 
 ## Variabelen
 
-Gebruik bij voorkeur deze namen, zodat agentoutputs vergelijkbaar blijven.
+Gebruik bij voorkeur deze namen, zodat agentoutputs vergelijkbaar blijven. De lokale calculator in [`scripts/mortgage_budget.py`](../scripts/mortgage_budget.py) gebruikt dezelfde structuur en accepteert JSON via `--input` of `--json`.
 
 ```yaml
 aankoopbudget_input:

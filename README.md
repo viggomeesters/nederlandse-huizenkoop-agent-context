@@ -65,6 +65,7 @@ Of start met één concrete taak:
 19. [Agent playbooks](docs/18-agent-playbooks.md)
 20. [Bronnen en verificatie](docs/19-bronnen-en-verificatie.md)
 21. [Aankoopbudget variabelen en outputmodel](docs/20-aankoopbudget-variabelen-outputmodel.md)
+22. [Hypotheek- en aankoopbudgetcalculator](docs/21-hypotheek-en-aankoopbudget-calculator.md)
 
 ## Belangrijke waarschuwing
 
@@ -80,7 +81,13 @@ Gebruik alleen synthetische of geanonimiseerde cases. Zet nooit live biedstrateg
 make check
 ```
 
-Dit controleert onder meer of elke doc een bronsectie heeft en of bekende privacygevoelige patronen niet per ongeluk zijn opgenomen.
+Dit controleert onder meer of elke doc een bronsectie heeft, of bekende privacygevoelige patronen niet per ongeluk zijn opgenomen, en of de lokale calculator-tests slagen.
+
+Calculator-smoke:
+
+```bash
+python3 scripts/mortgage_budget.py --input examples/doorstromer-aankoopbudget-input.json
+```
 
 
 ## Installatie / Installation

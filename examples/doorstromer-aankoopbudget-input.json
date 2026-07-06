@@ -1,0 +1,21 @@
+{
+  "maximale_hypotheek_bankindicatie": 540000,
+  "huidige_woning": {
+    "verwachte_verkoopprijs": 450000,
+    "resterende_hypotheek": 315000,
+    "verkoopkosten": 0,
+    "overbruggingspercentage": 0.95,
+    "verkoopstatus": "verkocht_onder_voorbehoud"
+  },
+  "eigen_middelen": {
+    "spaargeld_in_te_zetten": 0,
+    "overige_middelen": 0
+  },
+  "kosten_koper": {
+    "totaal": 20000
+  },
+  "extra_kosten": {
+    "totaal": 0
+  },
+  "gewenste_buffer_na_aankoop": 12500
+}

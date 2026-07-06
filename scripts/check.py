@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from pathlib import Path
 import re
+import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,6 +41,10 @@ for path in ROOT.rglob("*"):
 for path in sorted(list((ROOT / "prompts").glob("*.md")) + list((ROOT / "examples").glob("*.md"))):
     if not path.read_text(encoding="utf-8").strip().startswith("# "):
         errors.append(f"missing title heading: {path.relative_to(ROOT)}")
+
+unit = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"], cwd=ROOT, text=True, capture_output=True)
+if unit.returncode != 0:
+    errors.append("unit tests failed:\n" + unit.stdout + unit.stderr)
 
 if errors:
     print("CHECK FAILED")
