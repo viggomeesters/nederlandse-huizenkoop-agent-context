@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Nederlandse Huizenkoop Agent Context</title>
+  <desc id="desc">Dark blue public repository hero for a Dutch home-buying AI agent context pack.</desc>
+  <rect width="1280" height="640" fill="#0b1220"/>
+  <circle cx="1080" cy="120" r="220" fill="#1d4ed8" opacity="0.22"/>
+  <circle cx="180" cy="560" r="260" fill="#14b8a6" opacity="0.16"/>
+  <g transform="translate(92 96)">
+    <rect x="0" y="0" width="260" height="210" rx="22" fill="#111827" stroke="#38bdf8" stroke-width="3"/>
+    <path d="M44 120 L130 48 L216 120" fill="none" stroke="#f8fafc" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M68 118 V176 H192 V118" fill="none" stroke="#f8fafc" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="112" y="138" width="36" height="38" rx="4" fill="#38bdf8"/>
+  </g>
+  <text x="400" y="190" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="64" font-weight="800">Nederlandse Huizenkoop</text>
+  <text x="400" y="265" fill="#38bdf8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="58" font-weight="800">Agent Context</text>
+  <text x="400" y="340" fill="#cbd5e1" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30">Bezichtigen · Bieden · Voorbehoud · Kosten · Hypotheek</text>
+  <text x="400" y="390" fill="#94a3b8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24">Markdown-first contextpakket voor koper-side AI-agenten in Nederland</text>
+  <g transform="translate(400 450)">
+    <rect width="180" height="52" rx="26" fill="#38bdf8"/>
+    <text x="90" y="35" text-anchor="middle" fill="#0b1220" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="700">koper-first</text>
+    <rect x="202" width="180" height="52" rx="26" fill="#14b8a6"/>
+    <text x="292" y="35" text-anchor="middle" fill="#06251f" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="700">brongebonden</text>
+    <rect x="404" width="180" height="52" rx="26" fill="#f59e0b"/>
+    <text x="494" y="35" text-anchor="middle" fill="#261600" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="700">nuchter</text>
+  </g>
+</svg>

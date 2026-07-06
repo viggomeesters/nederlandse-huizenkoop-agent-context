@@ -1,0 +1,207 @@
+{
+  "$schema": "https://viggomeesters.github.io/schemas/repo-vision-contract.schema.json",
+  "schema_version": "1.0.0",
+  "artifact_kind": "repo_design_vision_contract",
+  "repo": {
+    "name": "nederlandse-huizenkoop-agent-context",
+    "primary_users": [
+      "Nederlandse huizenkopers",
+      "AI-agentbouwers",
+      "koper-side agents"
+    ],
+    "product_surface": "markdown_first_context_pack",
+    "language": "nl-NL",
+    "visibility": "public"
+  },
+  "vision": {
+    "one_line": "AI-agenten kunnen deze repo laden als Nederlands, brongebonden koper-side contextpakket voor het kopen van een huis.",
+    "north_star": "Een superbruikbare Markdown-first gids + promptset die Nederlandse huizenkopers helpt bezichtigen, bieden, voorwaarden, kosten, hypotheek, verkoop eigen huis en makelaarsdruk nuchter te beoordelen.",
+    "promise": "Een fresh clone moet zonder extra tooling uitleggen hoe het Nederlandse koopproces werkt, welke bronnen tellen, welke risico’s niet genegeerd mogen worden en welke prompts een agent veilig kan gebruiken."
+  },
+  "principles": [
+    {
+      "id": "agent-first",
+      "title": "Agent-first bruikbaarheid",
+      "rule": "Een AI-agent moet de repo direct kunnen laden en gebruiken als contextpakket met duidelijke evidence boundaries.",
+      "good": [
+        "prompts/",
+        "docs met bronnen",
+        "expliciete disclaimers"
+      ],
+      "bad": [
+        "onduidelijke scope",
+        "alleen menselijke marketingtekst",
+        "claims zonder verificatie"
+      ]
+    },
+    {
+      "id": "json-first",
+      "title": "JSON alleen waar het contractueel helpt",
+      "rule": "Voor deze repo is Markdown de kennisdrager; JSON wordt gebruikt voor repo-vision/contractmetadata en later optionele schema’s.",
+      "good": [
+        "docs/vision.json",
+        "optionele schema’s later"
+      ],
+      "bad": [
+        "kennis alleen in JSON",
+        "onleesbare context voor huizenkopers"
+      ]
+    },
+    {
+      "id": "nl-first",
+      "title": "Nederlands en Nederlandse terminologie",
+      "rule": "Gebruik Nederlandse taal en termen zoals kosten koper, ontbindende voorwaarden, financieringsvoorbehoud, bouwkundige keuring en biedlogboek.",
+      "good": [
+        "Nederlandse begrippen",
+        "bronlinks per pagina",
+        "praktische koperstaal"
+      ],
+      "bad": [
+        "Engelse makelaarstermen als default",
+        "generieke Amerikaanse kooplogica",
+        "vage vertalingen"
+      ]
+    },
+    {
+      "id": "buyer-first",
+      "title": "Koper-first",
+      "rule": "Optimaliseer voor koperbescherming: risico, voorwaarden, betaalbaarheid en onderhandelingsdiscipline boven dealdrang.",
+      "good": [
+        "walk-away ceiling",
+        "voorwaarden expliciet",
+        "kostenmodel"
+      ],
+      "bad": [
+        "blind overbieden",
+        "voorwaarden als zwakte framen",
+        "makelaarsdruk volgen"
+      ]
+    },
+    {
+      "id": "source-bound",
+      "title": "Brongebonden",
+      "rule": "Elke inhoudelijke pagina heeft bronnen; ontbrekende of verouderde brondata wordt als gap gelabeld.",
+      "good": [
+        "NVM/VEH/Nibud/NHG/Kadaster links",
+        "jaartal/kwartaal waar relevant",
+        "professionele verificatievragen"
+      ],
+      "bad": [
+        "zoeksnippet als bewijs",
+        "juridische zekerheid zonder bron",
+        "onverifieerbare marktclaims"
+      ]
+    },
+    {
+      "id": "public-safe",
+      "title": "Publiek veilig",
+      "rule": "Gebruik alleen generieke kennis en synthetische cases; geen echte adressen, bieddossiers, inkomensstukken of privécommunicatie.",
+      "good": [
+        "synthetische voorbeelden",
+        "privacycheck",
+        "geen live biedstrategie"
+      ],
+      "bad": [
+        "echte woningcases",
+        "persoonlijke brieven",
+        "hypotheekdocumenten"
+      ]
+    },
+    {
+      "id": "markdown-first",
+      "title": "Markdown-first",
+      "rule": "De primaire vorm is leesbare Markdown die mensen en agents direct kunnen kopiëren; schema’s zijn optioneel later.",
+      "good": [
+        "docs/",
+        "prompts/",
+        "examples/"
+      ],
+      "bad": [
+        "onnodige runtime",
+        "JSON-only kennislaag",
+        "toolchain-afhankelijkheid"
+      ]
+    }
+  ],
+  "non_goals": [
+    "juridisch advies vervangen",
+    "hypotheekadvies vervangen",
+    "bouwkundige keuring vervangen",
+    "live dossiers of biedingen publiceren",
+    "makelaarsdienst leveren"
+  ],
+  "public_safety": {
+    "forbidden": [
+      "secrets",
+      "persoonsgegevens",
+      "echte adressen",
+      "live biedstrategie",
+      "inkomens- of hypotheekdocumenten",
+      "private makelaarscommunicatie",
+      "private screenshots"
+    ],
+    "required_boundaries": [
+      "synthetische voorbeelden",
+      "bronsecties",
+      "disclaimer geen juridisch/financieel/bouwkundig advies",
+      "make check privacy scan"
+    ]
+  },
+  "acceptance_scorecard": [
+    {
+      "id": "complete-chain",
+      "question": "Dekt de repo de hele koopketen?",
+      "pass_condition": "Docs behandelen voorbereiding, zoeken, bezichtigen, waarde, bieden, voorwaarden, verkoop eigen huis, koopakte, overdracht en makelaars."
+    },
+    {
+      "id": "source-bound",
+      "question": "Kan een agent brongebonden antwoorden?",
+      "pass_condition": "Elke inhoudelijke doc heeft een ## Bronnen-sectie met primaire bronnen."
+    },
+    {
+      "id": "agent-usable",
+      "question": "Kan een gebruiker direct met een agent starten?",
+      "pass_condition": "Prompts bevatten koper-agent, bezichtiging-check, bod-review, tegenbod-grill, aankoopmakelaar-callscript en koopakte-check."
+    },
+    {
+      "id": "public-safe",
+      "question": "Is publicatie veilig?",
+      "pass_condition": "Voorbeelden zijn synthetisch en make check faalt op bekende private patronen."
+    },
+    {
+      "id": "local-gate",
+      "question": "Kan een fresh clone lokaal valideren?",
+      "pass_condition": "make check draait zonder externe services."
+    }
+  ],
+  "review_checklist": [
+    "Run make check.",
+    "Controleer dat nieuwe docs ## Bronnen bevatten.",
+    "Controleer dat voorbeelden synthetisch blijven.",
+    "Controleer actuele tarieven/normen bij jaartalgevoelige wijzigingen.",
+    "Label juridisch/financieel/bouwkundig als verificatievraag voor professional."
+  ],
+  "maturity_model": [
+    {
+      "level": "L0",
+      "state": "present",
+      "meaning": "Markdown contextpack bestaat en is leesbaar."
+    },
+    {
+      "level": "L1",
+      "state": "validated",
+      "meaning": "make check controleert structuur, bronsecties en privacy."
+    },
+    {
+      "level": "L2",
+      "state": "public-ready",
+      "meaning": "GitHub repo is publiek, metadata staat goed, release bestaat en fresh-clone smoke is groen."
+    },
+    {
+      "level": "L3",
+      "state": "expanded",
+      "meaning": "Meer synthetische scenario’s, bronnotities en optionele schema’s zijn toegevoegd zonder Markdown-first te breken."
+    }
+  ],
+  "residual_risk_wording": "Deze repo is context en beslischeck voor AI-agenten; hij vervangt geen notaris, jurist, hypotheekadviseur, fiscalist, aankoopmakelaar of bouwkundige."
+}
