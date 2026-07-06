@@ -20,8 +20,10 @@ Dit project is Markdown-first: bedoeld om direct te lezen op GitHub √©n te kopi√
 |---|---|
 | `docs/` | Leesbare gids over het volledige aankoopproces |
 | `prompts/` | Copy-pastebare agentprompts voor koperbegeleiding |
-| `examples/` | Synthetische cases, biedanalyse en kostenmodel |
-| `scripts/check.py` | Lokale validatie: bronsecties, privacywoorden, links, structuur |
+| `examples/` | Synthetische cases, biedanalyse, kostenmodel en JSON-inputs voor calculators |
+| `data/` | Rente-scenario aannames en andere expliciete rekentabel-inputs |
+| `scripts/mortgage_budget.py` | Lokale hypotheek- en aankoopbudgetcalculator |
+| `scripts/check.py` | Lokale validatie: bronsecties, privacywoorden, JSON, unit tests, structuur |
 | `assets/hero.svg` | Publieke repo-hero/social preview |
 
 ## Snel gebruiken
@@ -87,6 +89,7 @@ Calculator-smoke:
 
 ```bash
 python3 scripts/mortgage_budget.py --input examples/doorstromer-aankoopbudget-input.json
+python3 scripts/mortgage_budget.py --input examples/doorstromer-scenarios-targetwoning-input.json
 ```
 
 

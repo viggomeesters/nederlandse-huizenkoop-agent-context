@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from pathlib import Path
+import json
 import re
 import subprocess
 import sys
@@ -41,6 +42,14 @@ for path in ROOT.rglob("*"):
 for path in sorted(list((ROOT / "prompts").glob("*.md")) + list((ROOT / "examples").glob("*.md"))):
     if not path.read_text(encoding="utf-8").strip().startswith("# "):
         errors.append(f"missing title heading: {path.relative_to(ROOT)}")
+
+for folder in [ROOT / "data", ROOT / "examples"]:
+    if folder.exists():
+        for path in sorted(folder.glob("*.json")):
+            try:
+                json.loads(path.read_text(encoding="utf-8"))
+            except json.JSONDecodeError as exc:
+                errors.append(f"invalid JSON: {path.relative_to(ROOT)}: {exc}")
 
 unit = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"], cwd=ROOT, text=True, capture_output=True)
 if unit.returncode != 0:

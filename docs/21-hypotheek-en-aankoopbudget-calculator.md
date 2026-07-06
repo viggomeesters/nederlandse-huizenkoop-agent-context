@@ -157,9 +157,9 @@ De tool geeft JSON terug met:
 - `hypotheek.maximale_hypotheek_indicatief`
 - `hypotheek.maximale_bruto_maandlast`
 - `hypotheek_scenarios`
-- `target_woning.loan_to_value_pct`
-- `target_woning.risicoklasse_indicatief`
-- `target_woning.energielabel`
+- `target_woning.loan_to_value_pct` wanneer `target_woning` is opgegeven
+- `target_woning.risicoklasse_indicatief` wanneer `target_woning` is opgegeven
+- `target_woning.energielabel` wanneer `target_woning` is opgegeven
 - `overwaarde.bruto_overwaarde`
 - `overwaarde.verkoopkosten_in_mindering_op_overbrugging`
 - `overwaarde.indicatieve_overbrugging`
