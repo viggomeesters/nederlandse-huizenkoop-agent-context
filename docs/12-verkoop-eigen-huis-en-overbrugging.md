@@ -42,6 +42,40 @@ Reken standaard met verkoopkosten in mindering op de overbrugging. Controleer pe
 
 Vereniging Eigen Huis noemt het voorbehoud verkoop eigen woning als mogelijkheid. Lukt verkoop vóór een afgesproken datum niet, dan kun je ontbinden als dit zo is afgesproken. In een krappe markt is zo’n voorbehoud vaak minder aantrekkelijk voor verkopers.
 
+## Wat gebeurt er praktisch bij overbrugging?
+
+Een overbruggingshypotheek is meestal een **tijdelijke aflossingsvrije lening** op verwachte overwaarde. De precieze vorm verschilt per geldverstrekker, maar het praktische proces is vaak:
+
+1. **Nieuwe woning passeert bij de notaris.** Vanaf overdracht betaal je de nieuwe hypotheeklasten. Als je oude woning nog niet is verkocht/geleverd, betaal je daarnaast nog de lasten van de oude woning.
+2. **De overbrugging staat open.** Over het opgenomen overbruggingsbedrag betaal je rente. Omdat het tijdelijk en risicovoller is, kan die rente hoger zijn dan de gewone hypotheekrente. Vraag de adviseur naar rente, looptijd, afsluitkosten en of rente maandelijks wordt betaald of meegefinancierd.
+3. **Oude woning wordt verkocht en geleverd.** Bij de notaris wordt de verkoopopbrengst gebruikt om eerst de oude hypotheek af te lossen en verkoop-/notariskosten te verrekenen.
+4. **Overbrugging wordt afgelost.** De bank krijgt uit de verkoopopbrengst het openstaande overbruggingsbedrag terug.
+5. **Restant komt vrij of wordt ingebracht.** Wat daarna overblijft, kan op je betaalrekening terechtkomen of volgens hypotheek-/notarisafspraak worden gebruikt voor aflossing, depot of andere afgesproken bestemming.
+
+### Voorbeeldstroom
+
+```text
+Verkoop oude woning:             €525.000
+Resterende oude hypotheek:       €378.000
+Bruto overwaarde vóór kosten:    €147.000
+Openstaande overbrugging:         €50.000
+Restant vóór verkoopkosten:       €97.000
+```
+
+Dit restant is niet automatisch een bouwdepot. Een **bouwdepot** ontstaat alleen als dat expliciet onderdeel is van de hypotheek of verbouwingsfinanciering. Zonder depotafspraak is het restant in de praktijk vaak liquide eigen geld na de notariële afrekening, maar check de exacte afrekening en hypotheekvoorwaarden.
+
+### Belasting en bijleenregeling
+
+Overwaarde is niet simpelweg “belastingvrij bonusgeld”. Bij verkoop ontstaat een **eigenwoningreserve**. Als je binnen de wettelijke termijn een andere eigen woning koopt, beperkt die reserve de hypotheek waarover je rente mag aftrekken. Je betaalt dus niet automatisch inkomstenbelasting over de overwaarde zelf, maar de keuze om overwaarde wel of niet in de nieuwe woning te steken kan gevolgen hebben voor de **hypotheekrenteaftrek**. Laat de adviseur of fiscalist dit concreet doorrekenen.
+
+Praktisch betekent dit voor het restant na aflossing van de overbrugging:
+
+- **Direct aflossen / inbrengen in de nieuwe woning:** meestal de meest simpele route om de aftrekbare eigenwoningschuld hoog-zuiver te houden.
+- **Verbouwing of onderhoud van de eigen woning:** kan ook eigen-woning-besteding zijn, mits aantoonbaar gebruikt voor onderhoud/verbetering van de woning en goed vastgelegd. Een bouwdepot of aparte administratie maakt dit bewijs meestal schoner.
+- **Cash houden voor vrije buffer, auto, meubels of algemene uitgaven:** kan verstandig zijn voor liquiditeit, maar dat deel telt fiscaal vaak niet als in de eigen woning ingebracht. Daardoor kan een overeenkomstig deel van de hypotheekrente niet aftrekbaar worden.
+
+De kernvraag is dus niet alleen “hoeveel overwaarde hebben we?”, maar: **welk deel van de overwaarde gebruiken we voor aankoop/aflossing/verbouwing, en welk deel houden we bewust liquide ondanks mogelijk minder renteaftrek?**
+
 ## Dubbele lasten
 
 Modelleer altijd:
@@ -52,8 +86,11 @@ resterende hypotheek
 verkoopkosten
 brug beschikbaarheid
 maanden dubbele lasten
+rente op overbrugging
 cash tekort zonder verkoop
 cash tekort met brug-haircut
+restant na verkoop en aflossing overbrugging
+fiscale eigenwoningreserve / renteaftrek-gevolg
 ```
 
 ## Agent-waarschuwing
