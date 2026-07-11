@@ -1,0 +1,356 @@
+{
+  "metadata": {
+    "title": "Document-checklists voor Nederlandse woningkoop en woningverkoop",
+    "description": "Platte, herbruikbare checklistdata voor AI-agenten en apps. Geen persoonlijke documenten, geen live dossierdata en geen identificatienummers opnemen.",
+    "language": "nl-NL",
+    "version": "1.0.0",
+    "privacy_rule": "Gebruik dit bestand alleen als checklist. Sla nooit paspoortscans, identificatienummers, loonstroken, bankafschriften, hypotheekstukken of verkoopdossierbestanden zelf in deze publieke repo op."
+  },
+  "checklists": [
+    {
+      "id": "aankoop-koopakte",
+      "process": "aankoop",
+      "title": "Aankoop woning: koopakte en identificatie",
+      "purpose": "Stukken en gegevens die vaak nodig zijn om de koopovereenkomst op te stellen en vóór ondertekening te controleren.",
+      "items": [
+        {
+          "id": "koper-identiteitsbewijs",
+          "label": "Geldig identiteitsbewijs van iedere koper",
+          "examples": ["paspoort", "identiteitskaart"],
+          "why": "Identificatie van de koper(s) en juiste persoonsgegevens in de koopovereenkomst.",
+          "phase": "direct na acceptatie bod",
+          "usual_owner": "koper",
+          "share_with": ["aankoopmakelaar", "verkopend makelaar", "notaris"],
+          "privacy_level": "zeer gevoelig",
+          "notes": "Deel alleen via een afgesproken veilig kanaal. Neem geen identificatie- of documentnummers op in publieke notities of repos."
+        },
+        {
+          "id": "persoonsgegevens-kopers",
+          "label": "Persoonsgegevens koper(s) zoals op identiteitsbewijs",
+          "examples": ["volledige namen", "geboortedatum", "geboorteplaats", "huidig adres", "contactgegevens"],
+          "why": "De koopakte moet juridisch en administratief exact aansluiten op de koper(s).",
+          "phase": "direct na acceptatie bod",
+          "usual_owner": "koper",
+          "share_with": ["makelaar", "notaris"],
+          "privacy_level": "gevoelig"
+        },
+        {
+          "id": "biedafspraken",
+          "label": "Definitieve biedafspraken",
+          "examples": ["koopsom", "opleverdatum", "ontbindende voorwaarden", "waarborgsom of bankgarantie", "bouwkundige keuring", "termijnen"],
+          "why": "Voorkomt dat mondelinge of mailafspraken anders in de koopakte belanden.",
+          "phase": "concept koopakte",
+          "usual_owner": "koper en makelaar",
+          "share_with": ["makelaar", "notaris", "hypotheekadviseur"],
+          "privacy_level": "dossier"
+        },
+        {
+          "id": "lijst-van-zaken-aankoop",
+          "label": "Lijst van zaken / roerende zaken",
+          "examples": ["wat blijft achter", "wat gaat mee", "wat is ter overname"],
+          "why": "Maakt afspraken over inbegrepen zaken controleerbaar bij ondertekening en eindinspectie.",
+          "phase": "voor ondertekening koopakte",
+          "usual_owner": "verkoper via makelaar",
+          "share_with": ["koper", "makelaar", "notaris"],
+          "privacy_level": "dossier"
+        },
+        {
+          "id": "vragenlijst-verkoper-aankoop",
+          "label": "Vragenlijst / informatieformulier van verkoper",
+          "examples": ["gebreken", "verbouwingen", "installaties", "juridische bijzonderheden", "erfdienstbaarheden"],
+          "why": "Ondersteunt de onderzoeksplicht van de koper en mededelingsplicht van de verkoper.",
+          "phase": "voor ondertekening koopakte",
+          "usual_owner": "verkoper via makelaar",
+          "share_with": ["koper", "aankoopmakelaar", "notaris"],
+          "privacy_level": "dossier"
+        },
+        {
+          "id": "concept-koopovereenkomst",
+          "label": "Concept-koopovereenkomst",
+          "examples": ["NVM-koopakte", "bijlagen", "ontbindende voorwaarden", "boeteclausule"],
+          "why": "Laat prijs, termijnen, voorwaarden, roerende zaken en bankgarantie controleren vóór ondertekening.",
+          "phase": "voor ondertekening",
+          "usual_owner": "makelaar/notaris",
+          "share_with": ["koper", "verkoper", "notaris", "hypotheekadviseur"],
+          "privacy_level": "dossier"
+        }
+      ]
+    },
+    {
+      "id": "aankoop-hypotheekaanvraag",
+      "process": "aankoop",
+      "title": "Aankoop woning: hypotheekaanvraag",
+      "purpose": "Standaardstukken die een hypotheekadviseur of geldverstrekker vaak opvraagt. De exacte bank- of adviseurslijst blijft leidend.",
+      "items": [
+        {
+          "id": "identiteitsbewijs-hypotheek",
+          "label": "Geldig identiteitsbewijs van iedere aanvrager",
+          "examples": ["paspoort", "identiteitskaart"],
+          "why": "Identificatie en klantacceptatie door adviseur/geldverstrekker.",
+          "phase": "hypotheekaanvraag",
+          "usual_owner": "aanvrager",
+          "share_with": ["hypotheekadviseur", "geldverstrekker", "notaris"],
+          "privacy_level": "zeer gevoelig"
+        },
+        {
+          "id": "loonstrook",
+          "label": "Recente loonstrook per aanvrager",
+          "examples": ["laatste loonstrook", "eventueel meerdere maanden bij variabel inkomen"],
+          "why": "Onderbouwing van actueel inkomen uit loondienst.",
+          "phase": "hypotheekaanvraag",
+          "usual_owner": "aanvrager",
+          "share_with": ["hypotheekadviseur", "geldverstrekker"],
+          "privacy_level": "zeer gevoelig"
+        },
+        {
+          "id": "werkgeversverklaring",
+          "label": "Werkgeversverklaring per aanvrager in loondienst",
+          "examples": ["model werkgeversverklaring", "intentieverklaring bij tijdelijk contract"],
+          "why": "Bevestigt dienstverband, inkomen, contractvorm en eventuele intentie tot voortzetting.",
+          "phase": "hypotheekaanvraag",
+          "usual_owner": "werkgever en aanvrager",
+          "share_with": ["hypotheekadviseur", "geldverstrekker"],
+          "privacy_level": "zeer gevoelig"
+        },
+        {
+          "id": "jaaropgave",
+          "label": "Meest recente jaaropgave per aanvrager",
+          "examples": ["jaaropgave werkgever", "jaaropgaven bij meerdere werkgevers"],
+          "why": "Controle op jaarinkomen en consistentie met loonstroken.",
+          "phase": "hypotheekaanvraag",
+          "usual_owner": "aanvrager",
+          "share_with": ["hypotheekadviseur", "geldverstrekker"],
+          "privacy_level": "zeer gevoelig"
+        },
+        {
+          "id": "arbeidscontract",
+          "label": "Arbeidscontract of aanstellingsbrief indien gevraagd",
+          "examples": ["vast contract", "tijdelijk contract", "addendum arbeidsvoorwaarden"],
+          "why": "Kan nodig zijn om contracttype, uren en inkomensbestendigheid te beoordelen.",
+          "phase": "hypotheekaanvraag",
+          "usual_owner": "aanvrager",
+          "share_with": ["hypotheekadviseur", "geldverstrekker"],
+          "privacy_level": "gevoelig"
+        },
+        {
+          "id": "bankafschriften-eigen-middelen",
+          "label": "Bankafschriften of saldo-overzichten van eigen middelen",
+          "examples": ["spaarrekening", "betaalrekening", "beleggingsrekening indien relevant"],
+          "why": "Onderbouwt kosten koper, buffer, inbreng eigen geld en herkomst van middelen.",
+          "phase": "hypotheekaanvraag",
+          "usual_owner": "aanvrager",
+          "share_with": ["hypotheekadviseur", "geldverstrekker"],
+          "privacy_level": "zeer gevoelig"
+        },
+        {
+          "id": "schulden-verplichtingen",
+          "label": "Overzicht schulden en financiële verplichtingen",
+          "examples": ["studieschuld", "persoonlijke lening", "private lease", "creditcardlimiet", "alimentatie", "BKR-registratie"],
+          "why": "Verplichtingen kunnen de maximale leencapaciteit beïnvloeden.",
+          "phase": "hypotheekaanvraag",
+          "usual_owner": "aanvrager",
+          "share_with": ["hypotheekadviseur", "geldverstrekker"],
+          "privacy_level": "zeer gevoelig"
+        },
+        {
+          "id": "getekende-koopovereenkomst",
+          "label": "Getekende koopovereenkomst",
+          "examples": ["koopakte", "bijlagen", "lijst van zaken"],
+          "why": "De geldverstrekker gebruikt de koopovereenkomst voor object, prijs, termijnen en voorwaarden.",
+          "phase": "na ondertekening",
+          "usual_owner": "koper",
+          "share_with": ["hypotheekadviseur", "geldverstrekker", "notaris"],
+          "privacy_level": "dossier"
+        },
+        {
+          "id": "taxatierapport",
+          "label": "Taxatierapport van de aangekochte woning",
+          "examples": ["gevalideerd taxatierapport", "objectwaarde", "marktwaarde na verbouwing indien relevant"],
+          "why": "De geldverstrekker gebruikt de taxatiewaarde voor maximale lening ten opzichte van woningwaarde.",
+          "phase": "hypotheekaanvraag",
+          "usual_owner": "taxateur",
+          "share_with": ["hypotheekadviseur", "geldverstrekker"],
+          "privacy_level": "dossier"
+        },
+        {
+          "id": "huidige-woning-hypotheekgegevens",
+          "label": "Hypotheekgegevens huidige woning bij doorstromen",
+          "examples": ["restschuld", "rente", "maandlast", "looptijd", "aflosvorm"],
+          "why": "Nodig voor overbrugging, dubbele lasten en verkoopscenario.",
+          "phase": "hypotheekaanvraag bij doorstromer",
+          "usual_owner": "aanvrager",
+          "share_with": ["hypotheekadviseur", "geldverstrekker"],
+          "privacy_level": "zeer gevoelig"
+        },
+        {
+          "id": "verkoopwaarde-huidige-woning",
+          "label": "Onderbouwing waarde of verkoopstatus huidige woning",
+          "examples": ["taxatie", "makelaarsverklaring", "verkoopopdracht", "getekende verkoopakte"],
+          "why": "Bepaalt vaak hoeveel overwaarde als overbrugging kan worden meegenomen.",
+          "phase": "hypotheekaanvraag bij doorstromer",
+          "usual_owner": "aanvrager/makelaar",
+          "share_with": ["hypotheekadviseur", "geldverstrekker"],
+          "privacy_level": "dossier"
+        },
+        {
+          "id": "bouwkundig-rapport",
+          "label": "Bouwkundig rapport indien beschikbaar of afgesproken",
+          "examples": ["bouwkundige keuring", "kostenraming direct noodzakelijk herstel"],
+          "why": "Kan relevant zijn voor eigen risicoafweging, ontbindende voorwaarden of geldverstrekker.",
+          "phase": "onderzoek en hypotheekaanvraag",
+          "usual_owner": "koper/bouwkundige",
+          "share_with": ["koper", "hypotheekadviseur", "geldverstrekker indien gevraagd"],
+          "privacy_level": "dossier"
+        }
+      ]
+    },
+    {
+      "id": "verkoop-woningdossier",
+      "process": "verkoop",
+      "title": "Verkoop woning: makelaars- en koperinformatiedossier",
+      "purpose": "Stukken en gegevens die vaak nodig zijn om een woning verkoopklaar te maken, te adverteren, koperinformatie te geven en de verkoopakte te ondersteunen.",
+      "items": [
+        {
+          "id": "energielabel",
+          "label": "Definitief energielabel",
+          "examples": ["energielabelregistratie", "labelklasse", "opnamedatum"],
+          "why": "Bij verkoop moet een geldig energielabel beschikbaar zijn en meestal al in advertenties worden vermeld.",
+          "phase": "voor verkoopstart",
+          "usual_owner": "verkoper",
+          "share_with": ["verkoopmakelaar", "koper", "notaris"],
+          "privacy_level": "publiek/dossier"
+        },
+        {
+          "id": "vragenlijst-woning-verkoop",
+          "label": "Vragenlijst woning / verkoopvragenlijst",
+          "examples": ["gebreken", "lekkages", "verbouwingen", "installaties", "buren", "bodem", "asbest", "juridische bijzonderheden"],
+          "why": "Legt bekende informatie van de verkoper vast voor koperinformatie en aansprakelijkheidsrisico.",
+          "phase": "voor verkoopstart",
+          "usual_owner": "verkoper",
+          "share_with": ["verkoopmakelaar", "koper", "notaris"],
+          "privacy_level": "dossier"
+        },
+        {
+          "id": "lijst-van-zaken-verkoop",
+          "label": "Lijst van zaken",
+          "examples": ["blijft achter", "gaat mee", "ter overname"],
+          "why": "Maakt roerende zaken en overname-afspraken expliciet voor koper en koopakte.",
+          "phase": "voor verkoopstart en koopakte",
+          "usual_owner": "verkoper",
+          "share_with": ["verkoopmakelaar", "koper", "notaris"],
+          "privacy_level": "dossier"
+        },
+        {
+          "id": "eigendomsinformatie",
+          "label": "Eigendomsinformatie en kadastrale gegevens",
+          "examples": ["kadastraal perceel", "eigendomsbewijs", "erfdienstbaarheden", "kwalitatieve verplichtingen"],
+          "why": "Controleert wat juridisch wordt verkocht en welke rechten of beperkingen erbij horen.",
+          "phase": "voor verkoopstart of concept koopakte",
+          "usual_owner": "makelaar/notaris",
+          "share_with": ["verkoopmakelaar", "koper", "notaris"],
+          "privacy_level": "dossier"
+        },
+        {
+          "id": "woz-gemeentelijke-lasten",
+          "label": "WOZ-beschikking en gemeentelijke lasten indien gevraagd",
+          "examples": ["WOZ-waarde", "ozb", "rioolheffing", "waterschapslasten"],
+          "why": "Wordt vaak gebruikt voor verkoopdossier, koperinformatie of lastenoverzicht.",
+          "phase": "voor verkoopstart",
+          "usual_owner": "verkoper",
+          "share_with": ["verkoopmakelaar", "koper indien gevraagd"],
+          "privacy_level": "dossier"
+        },
+        {
+          "id": "meetrapport-plattegronden",
+          "label": "Meetrapport en plattegronden",
+          "examples": ["NEN 2580-meetrapport", "woonoppervlakte", "plattegronden", "brochuretekeningen"],
+          "why": "Onderbouwt oppervlaktes en voorkomt verkoopdiscussies over m².",
+          "phase": "voor verkoopstart",
+          "usual_owner": "makelaar/inmeter",
+          "share_with": ["verkoopmakelaar", "koper"],
+          "privacy_level": "publiek/dossier"
+        },
+        {
+          "id": "vve-stukken",
+          "label": "VvE-stukken indien van toepassing",
+          "examples": ["splitsingsakte", "reglement", "jaarrekening", "begroting", "MJOP", "notulen", "servicekosten"],
+          "why": "Bij appartementsrechten heeft de koper informatie nodig over VvE-financiën, onderhoud en regels.",
+          "phase": "voor verkoopstart",
+          "usual_owner": "verkoper/VvE beheerder",
+          "share_with": ["verkoopmakelaar", "koper", "notaris"],
+          "privacy_level": "dossier"
+        },
+        {
+          "id": "verbouwing-vergunningen-tekeningen",
+          "label": "Vergunningen, bouwtekeningen en verbouwingsinformatie",
+          "examples": ["omgevingsvergunning", "constructieberekening", "tekeningen", "opleverdocumenten"],
+          "why": "Onderbouwt rechtmatigheid en kwaliteit van verbouwingen of uitbreidingen.",
+          "phase": "voor verkoopstart",
+          "usual_owner": "verkoper",
+          "share_with": ["verkoopmakelaar", "koper", "notaris"],
+          "privacy_level": "dossier"
+        },
+        {
+          "id": "onderhoud-installaties-garanties",
+          "label": "Onderhouds-, installatie- en garantiedocumenten",
+          "examples": ["cv-ketel", "warmtepomp", "zonnepanelen", "laadpaal", "dak", "kozijnen", "keukenapparatuur", "facturen", "garantiebewijzen", "handleidingen"],
+          "why": "Geeft koper bewijs van onderhoud, eigendom en resterende garantie of serviceverplichtingen.",
+          "phase": "voor verkoopstart en overdracht",
+          "usual_owner": "verkoper",
+          "share_with": ["verkoopmakelaar", "koper"],
+          "privacy_level": "dossier"
+        },
+        {
+          "id": "hypotheek-aflosinformatie-verkoop",
+          "label": "Hypotheek- en aflosinformatie voor notariële afrekening",
+          "examples": ["resterende hypotheek", "bankgegevens", "aflosnota"],
+          "why": "De notaris heeft informatie nodig om de oude hypotheek af te lossen en royement te regelen.",
+          "phase": "na verkoop richting overdracht",
+          "usual_owner": "verkoper/bank/notaris",
+          "share_with": ["notaris"],
+          "privacy_level": "zeer gevoelig"
+        },
+        {
+          "id": "sleutels-meterstanden-overdracht",
+          "label": "Sleutels, meterstanden en opleverafspraken",
+          "examples": ["meterstanden", "aantal sleutels", "afstandsbedieningen", "codes", "opleverstaat"],
+          "why": "Nodig voor eindinspectie en praktische overdracht.",
+          "phase": "eindinspectie en overdracht",
+          "usual_owner": "verkoper en koper",
+          "share_with": ["koper", "makelaar", "notaris indien nodig"],
+          "privacy_level": "dossier"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "NVM - Alles over kopen",
+      "url": "https://www.nvm.nl/wonen/kopen/alles-over-kopen/"
+    },
+    {
+      "title": "NVM - Energielabel woningen",
+      "url": "https://www.nvm.nl/wonen/energielabel-woningen/"
+    },
+    {
+      "title": "Vereniging Eigen Huis - Koopovereenkomst en bedenktijd",
+      "url": "https://www.eigenhuis.nl/huis-kopen/bestaande-bouw/koopovereenkomst-en-andere-zaken/koopcontract-getekend-start-bedenktijd"
+    },
+    {
+      "title": "Vereniging Eigen Huis - Ontbindende voorwaarden",
+      "url": "https://www.eigenhuis.nl/huis-kopen/bestaande-bouw/koopovereenkomst-en-andere-zaken/ontbindende-voorwaarden-dit-zijn-de-belangrijkste"
+    },
+    {
+      "title": "Nibud - Hypotheek afsluiten",
+      "url": "https://www.nibud.nl/onderwerpen/wonen/hypotheek/"
+    },
+    {
+      "title": "Kadaster - Eigendomsinformatie",
+      "url": "https://www.kadaster.nl/producten/woning/eigendomsinformatie"
+    },
+    {
+      "title": "Rijksoverheid - Huis kopen",
+      "url": "https://www.rijksoverheid.nl/onderwerpen/huis-kopen"
+    }
+  ]
+}

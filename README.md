@@ -21,7 +21,7 @@ Dit project is Markdown-first: bedoeld om direct te lezen op GitHub én te kopi�
 | `docs/` | Leesbare gids over het volledige aankoopproces |
 | `prompts/` | Copy-pastebare agentprompts voor koperbegeleiding |
 | `examples/` | Synthetische cases, biedanalyse, kostenmodel en JSON-inputs voor calculators |
-| `data/` | Rente-scenario aannames en andere expliciete rekentabel-inputs |
+| `data/` | Rente-scenario aannames, document-checklists en andere expliciete data-inputs |
 | `scripts/mortgage_budget.py` | Lokale hypotheek- en aankoopbudgetcalculator |
 | `scripts/check.py` | Lokale validatie: bronsecties, privacywoorden, JSON, unit tests, structuur |
 | `assets/hero.svg` | Publieke repo-hero/social preview |
@@ -70,6 +70,10 @@ Of start met één concrete taak:
 22. [Hypotheek- en aankoopbudgetcalculator](docs/21-hypotheek-en-aankoopbudget-calculator.md)
 
 ## Belangrijke waarschuwing
+
+Voor platte checklistdata rond aan te leveren stukken staat er nu ook:
+
+- [`data/woning-document-checklists.json`](data/woning-document-checklists.json) — generieke document-checklists voor aankoop, hypotheekaanvraag en verkoopdossier.
 
 Dit is **geen juridisch, financieel, bouwkundig of fiscaal advies**. Gebruik het als contextpakket en beslischeck. Laat koopakte, financiering, fiscaliteit en bouwkundige risico's controleren door bevoegde professionals zoals hypotheekadviseur, notaris, jurist, bouwkundige of Vereniging Eigen Huis.
 
