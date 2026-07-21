@@ -43,6 +43,7 @@ Of start met één concrete taak:
 - [Tegenbod grillen](prompts/tegenbod-grill.md)
 - [Aankoopmakelaar bellen](prompts/aankoopmakelaar-callscript.md)
 - [Koopakte checken](prompts/koopakte-check.md)
+- [Bouwkundige keuring reviewen](prompts/bouwkundige-keuring-review.md)
 
 ## Inhoudelijke route
 
