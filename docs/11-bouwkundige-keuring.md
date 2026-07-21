@@ -17,6 +17,18 @@ Lees altijd de exacte contracttekst. Controleer minimaal:
 
 Een totaal onder de contractgrens betekent niet automatisch dat de woning financieel verstandig is. Kosten op korte termijn, installaties aan het einde van hun levensduur en onzeker herstel kunnen samen alsnog een grote liquiditeitsvraag vormen.
 
+### Contractgrens is een optie, geen bestedingsbelofte
+
+Verwar drie verschillende bedragen niet:
+
+1. **Contractuele ontbindingsgrens:** vanaf welk relevant rapportbedrag de koper mág ontbinden.
+2. **Persoonlijke tolerantie:** hoeveel de koper bereid is zelf te betalen zonder de woning te laten lopen.
+3. **Werkelijke korte-termijnblootstelling:** alle concrete kosten die binnen circa 0–2 jaar op de koper afkomen.
+
+Een lage contractgrens verplicht de koper niet tot ontbinding of heronderhandeling. De koper kan na een rapport boven de grens nog steeds bewust doorgaan. Daarom is een lagere, door verkoper acceptabele grens normaal gunstiger voor de koper dan een hogere grens. Verhoog een voorgestelde grens alleen tegenover een concrete compensatie of wanneer dat aantoonbaar nodig is om de koop tot stand te brengen; niet omdat de koper persoonlijk méér herstel kan of wil dragen.
+
+Voorbeeld: verkoper accepteert €5.000 als ontbindingsgrens, terwijl koper intern bereid is €15.000 zelf te dragen. Houd dan contractueel €5.000 en leg €15.000 apart vast als interne beslisgrens. Zo behoudt koper eerder een keuze zonder zichzelf te verplichten die keuze te gebruiken.
+
 ## Kostenrubrieken: niet op één hoop gooien
 
 Laat het rapport en de agent-output minimaal deze rubrieken scheiden:
